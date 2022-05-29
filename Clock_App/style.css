@@ -3,6 +3,17 @@ body {
     padding:0%;
     background-color: black;
 }
+
+h1 {
+    color:white;
+    display:none;
+    position:absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    top:35%;
+    left:44%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+}
 .nav {
     background-color:rgb(102, 63, 92);
     display:flex;
@@ -28,7 +39,9 @@ border-radius: .25rem;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 box-shadow: 0 2px 15px 0 rgb(15, 15, 15);
 opacity: 0;
-
+pointer-events:none;
+transform: translateY(-10px);
+transition:opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
 .dropdown button:hover + .dropdown-menu {
     opacity: 1;
@@ -40,8 +53,8 @@ opacity: 0;
 }
 button {
     display:flex;
-
-    width: 30%;
+    justify-content: space-between;
+    
     background-color: Transparent;
     border-color: transparent;
     font-size: 35px;
@@ -77,8 +90,7 @@ button:hover{
     color: white;
     font-size: 15px;
     position: initial;
-    padding-left: 50%;
-
+    margin:5px 5px;
 }
 .dropdown-menu button:hover{
     color: grey;

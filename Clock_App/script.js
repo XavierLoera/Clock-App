@@ -9,6 +9,7 @@ const OnLoadDocument = () => {
     for(let i = 0; i < 100; i++) {
         window.clearInterval(i);
     }
+    document.getElementById('static').style.display = 'none';
     document.body.style.backgroundColor = 'black';
     setInterval(displayTime,10);
 }
@@ -56,9 +57,10 @@ const countDown = () => {
     document.getElementById('hours').innerHTML = texthour;
     document.getElementById('minutes').innerHTML = textMin;
     document.getElementById('seconds').innerHTML = textSec;
-    if(document.getElementById('minutes').innerHTML === '00' && document.getElementById('seconds').innerHTML === '00' && !restBool) {
+    if(document.getElementById('minutes').innerHTML === '00' && document.getElementById('seconds').innerHTML === '00' && !restBool && hour === 0) {
         document.body.style.backgroundColor = 'darkgreen';
         document.getElementById('minutes').innerHTML = restTime;
+        document.getElementById('static').innerHTML = 'Rest';
         min2 = date2.getMinutes() + restTime ;
         date2.setMinutes(min2);
         for(let i = 0; i < 100; i++) {
@@ -67,9 +69,10 @@ const countDown = () => {
         setInterval(countDown,10);
         restBool = !restBool;
     }
-    if(document.getElementById('minutes').innerHTML === '00' && document.getElementById('seconds').innerHTML === '00' && restBool) {
+    if(document.getElementById('minutes').innerHTML === '00' && document.getElementById('seconds').innerHTML === '00' && restBool && hour === 0) {
         document.body.style.backgroundColor = 'darkred';
         document.getElementById('minutes').innerHTML = workTime;
+        document.getElementById('static').innerHTML = 'Work';
         min2 = date2.getMinutes() + workTime ;
         date2.setMinutes(min2);
         for(let i = 0; i < 100; i++) {
@@ -89,6 +92,7 @@ const pomodoro = (work,rest) => {
     restTime = rest;
     workTime = work;
     document.body.style.backgroundColor = 'darkred';
+    document.getElementById('static').style.display = 'block';
     document.getElementById('date').style.display = 'none';
     document.getElementById('hours').innerHTML = '00';
     document.getElementById('seconds').innerHTML = '00';
