@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>Clock App</title>
+</head>
+<body onload="OnLoadDocument();">
+    <div class="nav">
+        <button>Timer</button>
+        <button onclick="OnLoadDocument()">Clock</button>
+        <div class="dropdown">
+            <button>Pomodoro</button>
+            <div class="dropdown-menu">
+                <button id="pomodoro" onclick="pomodoro(90,35)" >90x35 pomodoro</button>
+                <button id="pomodoro" onclick="pomodoro(45,15)" >45x15 pomodoro</button>
+                <button id="pomodoro" onclick="pomodoro(25,5)">25x5 pomodoro</button>
+            </div>
+        </div>
+    </div>
+       
+
+    
+    <div class="container">
+       
+        <div id="date">
+            <span id="week">Monday</span>
+            <span>,</span>
+            <span id="month">January</span>
+            <span id="day">34</span>
+            <span>,</span>
+            <span id="year">2000</span>
+        </div>
+        <div id="time">
+            
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+            <span id="session">AM</span>
+        </div>
+    </div>
+</body>
+</html>
