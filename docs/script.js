@@ -57,7 +57,7 @@ const countDown = () => {
     document.getElementById('hours').innerHTML = texthour;
     document.getElementById('minutes').innerHTML = textMin;
     document.getElementById('seconds').innerHTML = textSec;
-    if(document.getElementById('minutes').innerHTML === '00' && document.getElementById('seconds').innerHTML === '00' && !restBool && hour === 0) {
+    if(document.getElementById('minutes').innerHTML === '00' && document.getElementById('seconds').innerHTML === '00' && !restBool && document.getElementById('hours').innerHTML === '00') {
         document.body.style.backgroundColor = 'darkgreen';
         document.getElementById('minutes').innerHTML = restTime;
         document.getElementById('static').innerHTML = 'Rest';
@@ -69,7 +69,7 @@ const countDown = () => {
         setInterval(countDown,10);
         restBool = !restBool;
     }
-    if(document.getElementById('minutes').innerHTML === '00' && document.getElementById('seconds').innerHTML === '00' && restBool && hour === 0) {
+    if(document.getElementById('minutes').innerHTML === '00' && document.getElementById('seconds').innerHTML === '00' && restBool && document.getElementById('hours').innerHTML === '00') {
         document.body.style.backgroundColor = 'darkred';
         document.getElementById('minutes').innerHTML = workTime;
         document.getElementById('static').innerHTML = 'Work';
